@@ -4,6 +4,10 @@
       "name": "Workspace",
       "path": ".",
     },
+    {
+      "name": "@package/insomnia-types",
+      "path": "packages/insomnia-types"
+    },
   ],
   "settings": {
     "files.exclude": {

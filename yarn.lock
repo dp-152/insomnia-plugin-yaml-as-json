@@ -81,6 +81,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@insomnia-plugins/insomnia-types@workspace:packages/insomnia-types":
+  version: 0.0.0-use.local
+  resolution: "@insomnia-plugins/insomnia-types@workspace:packages/insomnia-types"
+  dependencies:
+    "@types/node": "npm:^18"
+    typescript: "npm:^5"
+  languageName: unknown
+  linkType: soft
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -788,6 +797,15 @@ __metadata:
   version: 1.2.5
   resolution: "@types/minimist@npm:1.2.5"
   checksum: 10c0/3f791258d8e99a1d7d0ca2bda1ca6ea5a94e5e7b8fc6cde84dd79b0552da6fb68ade750f0e17718f6587783c24254bbca0357648dd59dc3812c150305cabdc46
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18":
+  version: 18.19.43
+  resolution: "@types/node@npm:18.19.43"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/8be49897596d7641941d21d943b10a7b907af714617f9e3d1c69d735850de0c0a8d04f1428277c2b2451b4eda6ab1a3c05bfadfe66b4a30cd9ca51200814c647
   languageName: node
   linkType: hard
 
@@ -5058,7 +5076,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:>=3 < 6":
+"typescript@npm:>=3 < 6, typescript@npm:^5":
   version: 5.5.4
   resolution: "typescript@npm:5.5.4"
   bin:
@@ -5068,7 +5086,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A>=3 < 6#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A>=3 < 6#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
   version: 5.5.4
   resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
   bin:
@@ -5084,6 +5102,13 @@ __metadata:
   bin:
     uglifyjs: bin/uglifyjs
   checksum: 10c0/7609ab3f10d54de5ef014770f845c747266a969e9092d2284ca0ba18f10a4488208c1491bd8b52bd4c40cf6687b47a77c495f08e4a625babcdd57f58e34a3976
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 10c0/bb673d7876c2d411b6eb6c560e0c571eef4a01c1c19925175d16e3a30c4c428181fb8d7ae802a261f283e4166a0ac435e2f505743aa9e45d893f9a3df017b501
   languageName: node
   linkType: hard
 
