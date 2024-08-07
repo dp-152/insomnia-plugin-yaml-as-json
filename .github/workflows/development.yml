@@ -1,0 +1,46 @@
+name: CI - Release Development Version
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: develop
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Setup Github Credentials
+        run: |
+          git config user.email "ci@github.com"
+          git config user.name "[CI] Github Actions"
+          cat << EOF >> "${HOME}/.netrc"
+          machine github.com
+          login github-actions[bot]
+          password ${{ secrets.GITHUB_TOKEN }}
+
+          EOF
+      - name: Enable Yarn via Corepack
+        run: |
+          corepack enable
+          echo "Yarn version: $(yarn --version)"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+      - name: Install Dependencies
+        run: yarn install --immutable
+      - name: Build Packages
+        run: yarn ws:build
+      - name: Version Packages
+        run: yarn ws:version:develop --create-release github
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
