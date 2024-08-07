@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Workspace",
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "files.exclude": {
+      "plugins/": true,
+      "packages/": true,
+    },
+    "typescript.tsdk": "Workspace/node_modules/typescript/lib",
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "typescript.disableAutomaticTypeAcquisition": true,
+  },
+}

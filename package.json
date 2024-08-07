@@ -1,0 +1,27 @@
+{
+  "name": "@dp152/insomnia-plugins",
+  "packageManager": "yarn@4.4.0",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "plugins/*"
+  ],
+  "repository": "github:dp-152/insomnia-plugins",
+  "scripts": {
+    "ws:build": "lerna run build",
+    "ws:lint": "lerna run lint",
+    "ws:typecheck": "lerna run typecheck",
+    "ws:publish": "lerna publish from-package --yes --pre-dist-tag next",
+    "ws:publish:canary": "lerna publish --yes --canary --force-publish --allow-branch '*' --no-git-tag-version --no-push --dist-tag canary --preid canary",
+    "ws:version:develop": "lerna version --yes --conventional-commits --conventional-prerelease --signoff-git-commit --no-commit-hooks --preid next",
+    "ws:version:final": "lerna version --yes --conventional-commits --conventional-graduate --signoff-git-commit --no-commit-hooks"
+  },
+  "dependencies": {
+    "chokidar": "latest",
+    "conventional-changelog-conventionalcommits": "^8",
+    "lerna": "latest",
+    "prettier": "latest",
+    "rimraf": "latest"
+  }
+}

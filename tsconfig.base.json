@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    "sourceMap": true,
+    "declarationMap": true,
+
+    "lib": ["ESNext"],
+  }
+}
