@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "chokidar": "latest",
-    "conventional-changelog-conventionalcommits": "^8",
+    "conventional-changelog-conventionalcommits": "< 8",
     "lerna": "latest",
     "prettier": "latest",
     "rimraf": "latest"
