@@ -17,6 +17,9 @@
     "@types/node": "^18",
     "typescript": "^5"
   },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  },
   "insomnia": {
     "name": "yaml-as-json",
     "displayName": "YAML as JSON",
@@ -29,6 +32,7 @@
     }
   },
   "files": [
-    "dist/*"
+    "dist/*",
+    "icon.svg"
   ]
 }
