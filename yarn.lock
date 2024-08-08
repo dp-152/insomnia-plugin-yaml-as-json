@@ -81,7 +81,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@insomnia-plugins/insomnia-types@workspace:packages/insomnia-types":
+"@insomnia-plugins/insomnia-types@workspace:^, @insomnia-plugins/insomnia-types@workspace:packages/insomnia-types":
   version: 0.0.0-use.local
   resolution: "@insomnia-plugins/insomnia-types@workspace:packages/insomnia-types"
   dependencies:
@@ -3034,6 +3034,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "insomnia-plugin-yaml-as-json@workspace:plugins/yaml-as-json"
   dependencies:
+    "@insomnia-plugins/insomnia-types": "workspace:^"
     "@swc/cli": "npm:latest"
     "@swc/core": "npm:latest"
     "@types/node": "npm:^18"
