@@ -4,6 +4,21 @@
   "version": "0.0.0",
   "repository": "github:dp-152/insomnia-plugins",
   "license": "MIT",
+  "types": "./lib/main.ts",
+  "exports": {
+    ".": "./lib/main.ts",
+    "./*": "./lib/*.ts"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./lib/main.ts"
+      ],
+      "./*": [
+        "./lib/*.ts"
+      ]
+    }
+  },
   "private": true,
   "devDependencies": {
     "@types/node": "^18",
