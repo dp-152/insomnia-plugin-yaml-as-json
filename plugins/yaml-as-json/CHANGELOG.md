@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/dp-152/insomnia-plugins/compare/insomnia-plugin-yaml-as-json@0.1.1-next.0...insomnia-plugin-yaml-as-json@0.1.1) (2024-08-08)
+
+**Note:** Version bump only for package insomnia-plugin-yaml-as-json
+
 ## [0.1.1-next.0](https://github.com/dp-152/insomnia-plugins/compare/insomnia-plugin-yaml-as-json@0.1.0...insomnia-plugin-yaml-as-json@0.1.1-next.0) (2024-08-08)
 
 ### Bug Fixes
