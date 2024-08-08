@@ -1,0 +1,33 @@
+{
+  "name": "insomnia-plugin-yaml-as-json",
+  "packageManager": "yarn@4.4.0",
+  "version": "0.0.0",
+  "repository": "github:dp-152/insomnia-plugins",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "swc src --cli-config-file=swc-cli.json",
+    "start:dev": "swc src --cli-config-file=swc-cli.json --watch",
+    "clean": "rimraf dist/"
+  },
+  "devDependencies": {
+    "@swc/cli": "latest",
+    "@swc/core": "latest",
+    "@types/node": "^18",
+    "typescript": "^5"
+  },
+  "insomnia": {
+    "name": "yaml-as-json",
+    "displayName": "YAML as JSON",
+    "description": "Converts a YAML request body to JSON before sending the request",
+    "images": {
+      "icon": "icon.svg"
+    },
+    "publisher": {
+      "name": "Mizael Almeida"
+    }
+  },
+  "files": [
+    "dist/*"
+  ]
+}

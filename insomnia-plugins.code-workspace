@@ -8,6 +8,10 @@
       "name": "@package/insomnia-types",
       "path": "packages/insomnia-types"
     },
+    {
+      "name": "@plugin/yaml-as-json",
+      "path": "plugins/yaml-as-json"
+    },
   ],
   "settings": {
     "files.exclude": {
