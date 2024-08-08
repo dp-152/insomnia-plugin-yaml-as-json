@@ -1,0 +1,64 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nrwl/nx/master/packages/nx/schemas/nx-schema.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "test"
+        ],
+        "cacheDirectory": ".nx/runner-cache"
+      }
+    }
+  },
+  "namedInputs": {
+    "source": [
+      "{projectRoot}/src/**/*"
+    ],
+    "types": [
+      "{workspaceRoot}/tsconfig.base.json",
+      "{projectRoot}/tsconfig.json"
+    ],
+    "buildconfig": [
+      "{projectRoot}/.swcrc",
+      "{projectRoot}/swc-cli.json"
+    ],
+    "default": [
+      "source",
+      "types",
+      "buildconfig",
+      "{projectRoot}/package.json"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": [
+        "default"
+      ],
+      "dependsOn": [
+        "^build",
+        "clean"
+      ]
+    },
+    "typecheck": {
+      "inputs": [
+        "types",
+        "source"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "start:dev": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "start": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
