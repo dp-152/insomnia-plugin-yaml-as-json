@@ -22,7 +22,16 @@ export const requestHooks: RequestHook[] = [
       return;
     }
 
-    const body = req.text && YAML.parse(req.text, { merge: true });
+    let body: object;
+    try {
+      body = YAML.parse(req.text, { merge: true });
+    } catch (err) {
+      console.error(
+        `[yaml-as-json] Error parsing YAML in request ${requestId}: ${err}`
+      );
+      return;
+    }
+
     if ("_nojson" in body && body._nojson === true) {
       console.debug(
         `[yaml-as-json] Found _nojson: true in body for request ${requestId}, excluding property and sending request...`
