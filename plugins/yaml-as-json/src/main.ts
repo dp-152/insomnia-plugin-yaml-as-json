@@ -7,15 +7,31 @@ export const requestHooks: RequestHook[] = [
     const requestId = ctx.request.getId();
     console.debug(`[yaml-as-json] Handling request ${requestId}`);
     const req = ctx.request.getBody();
-    const mime = req.mimeType && new MIMEType(req.mimeType);
-    if (!mime || mime.subtype !== "yaml") {
+    if (!req || !req.text) {
       console.debug(
-        `[yaml-as-json] Mime type is not yaml for request ${requestId}, ignoring...`
+        `[yaml-as-json] Request ${requestId} has no body, ignoring...`
       );
       return;
     }
 
-    const body = req.text && YAML.parse(req.text);
+    const mime = req.mimeType && new MIMEType(req.mimeType);
+    if (!mime || mime.subtype !== "yaml") {
+      console.debug(
+        `[yaml-as-json] Mime subtype is not 'yaml' in request ${requestId}, ignoring...`
+      );
+      return;
+    }
+
+    let body: object;
+    try {
+      body = YAML.parse(req.text, { merge: true });
+    } catch (err) {
+      console.error(
+        `[yaml-as-json] Error parsing YAML in request ${requestId}: ${err}`
+      );
+      return;
+    }
+
     if ("_nojson" in body && body._nojson === true) {
       console.debug(
         `[yaml-as-json] Found _nojson: true in body for request ${requestId}, excluding property and sending request...`
