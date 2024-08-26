@@ -7,10 +7,17 @@ export const requestHooks: RequestHook[] = [
     const requestId = ctx.request.getId();
     console.debug(`[yaml-as-json] Handling request ${requestId}`);
     const req = ctx.request.getBody();
+    if (!req || !req.text) {
+      console.debug(
+        `[yaml-as-json] Request ${requestId} has no body, ignoring...`
+      );
+      return;
+    }
+
     const mime = req.mimeType && new MIMEType(req.mimeType);
     if (!mime || mime.subtype !== "yaml") {
       console.debug(
-        `[yaml-as-json] Mime type is not yaml for request ${requestId}, ignoring...`
+        `[yaml-as-json] Mime subtype is not 'yaml' in request ${requestId}, ignoring...`
       );
       return;
     }
